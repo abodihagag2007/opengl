@@ -27,9 +27,10 @@ static shaderProgramSource parseShader(const std::string& filepath) {
                 shadertype type = shadertype::VERTEX;
             else if(line.find("fragment") != std::string::npos)
                 shadertype type = shadertype::FRAGMENT;
-            else
-            ss[(int)type] << line << '\n';
+           
         }
+        else
+            ss[(int)type] << line << '\n';
     }
 
     return { ss[0].str(),ss[1].str() };
