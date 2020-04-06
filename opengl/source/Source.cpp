@@ -120,8 +120,8 @@ int main(void)
     std::cout << source.VertexSource << std::endl;
     std::cout <<"fragment" << std::endl;
     std::cout << source.FragmentSource << std::endl;
-    //unsigned int shader = CreateShader(source.VertexSource, source.FragmentSource);
-    //glUseProgram(shader);
+    unsigned int shader = CreateShader(source.VertexSource, source.FragmentSource);
+    glUseProgram(shader);
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
@@ -140,7 +140,7 @@ int main(void)
         glfwPollEvents();
         
     }
-  //glDeleteProgram(shader);
+    glDeleteProgram(shader);
     glfwTerminate();
     return 0;
 }
